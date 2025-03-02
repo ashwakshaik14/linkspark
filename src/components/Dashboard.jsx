@@ -49,6 +49,10 @@ function Dashboard() {
   const [showPopup, setShowPopup] = useState(false); // State for popup visibility
   const [selectedCard, setSelectedCard] = useState(null);
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
+  const [selectedButtonStyle, setSelectedButtonStyle] = useState(""); // Store the selected style
+  const [buttonColor, setButtonColor] = useState("#ffffff");
+  const [buttonFontColor, setButtonFontColor] = useState("#888888");
+  
 
   const handleEditClick = (card) => {
     setSelectedCard(card);
@@ -130,6 +134,7 @@ function Dashboard() {
       const response = await fetch(
         `https://spark-back.onrender.com/api/linkdata/user/${email}`
       );
+
       if (!response.ok) {
         console.error("No saved data found.");
         return;
@@ -138,7 +143,7 @@ function Dashboard() {
       const userData = await response.json();
       console.log("Fetched Saved Data:", userData);
 
-      // Update state with fetched data
+      // ✅ Apply the fetched settings
       if (userData) {
         setProfileData({
           title: userData.title || "",
@@ -151,12 +156,16 @@ function Dashboard() {
         setFontColor(userData.fontColor || "#000000");
         setLayout(userData.layout || "stack");
         setCards(userData.cards || []);
+
+        // ✅ Newly added states
+        setSelectedButtonStyle(userData.selectedButtonStyle || "");
+        setButtonColor(userData.buttonColor || "#ffffff");
+        setButtonFontColor(userData.buttonFontColor || "#888888");
       }
     } catch (error) {
       console.error("Error fetching saved data:", error);
     }
   };
-
   const getTextColor = (bgColor) => {
     const hex = bgColor.replace("#", "");
     const r = parseInt(hex.substring(0, 2), 16);
@@ -480,7 +489,7 @@ function Dashboard() {
 
           <section className={style.content}>
             <div className={style.mobilePreview}>
-              <div
+              {/* <div
                 className={style.phoneFrame}
                 style={{
                   backgroundColor: bgColor2,
@@ -512,7 +521,6 @@ function Dashboard() {
 
                 <br />
 
-                {/* ✅ Button Controls */}
                 <div className={style.two}>
                   <button
                     className={activeButton2 === "Add Link" ? style.active : ""}
@@ -531,7 +539,6 @@ function Dashboard() {
                   </button>
                 </div>
 
-                {/* ✅ Mini Cards inside Phone Frame */}
                 <div className={`${style.miniCardContainer} ${style[layout]}`}>
                   {cards
                     .filter(
@@ -560,7 +567,118 @@ function Dashboard() {
                 </div>
 
                 <button className={style.button}>Get Connected</button>
-              </div>
+              </div> */}
+
+              <div
+                              className={style.phoneFrame}
+                              style={{
+                                backgroundColor: bgColor2,
+                                color: fontColor,
+                                fontFamily: fontFamily, // ✅ Ensure applied here
+                              }}
+                            >
+                              <div
+                                className={style.profileSection}
+                                style={{
+                                  backgroundColor: bgColor,
+                                  color: fontColor,
+                                  fontFamily: fontFamily, // ✅ Apply font here too
+                                }}
+                              >
+                                <button onClick={handleShare}>
+                                  <IoShareOutline />
+                                </button>
+                                {image ? (
+                                  <img src={image} alt="Uploaded" className={style.i} />
+                                ) : (
+                                  <div className={style.placeholder}>No Image</div>
+                                )}
+                                <h3 style={{ fontFamily: fontFamily }}>
+                                  @{profileData.title || "username"}
+                                </h3>
+                                <p style={{ fontFamily: fontFamily }}>{profileData.bio}</p>
+                              </div>
+              
+                              <br />
+              
+                              <div className={style.two}>
+                                <button
+                                  className={activeButton2 === "Add Link" ? style.active : ""}
+                                  onClick={() => setActiveButton2("Add Link")}
+                                  style={{ fontFamily: fontFamily }}
+                                >
+                                  Add Link
+                                </button>
+                                &nbsp;
+                                <button
+                                  className={activeButton2 === "Add Shop" ? style.active : ""}
+                                  onClick={() => setActiveButton2("Add Shop")}
+                                  style={{ fontFamily: fontFamily }}
+                                >
+                                  Add Shop
+                                </button>
+                              </div>
+              
+                              {/* <div className={`${style.miniCardContainer} ${style[layout]}`}>
+                                {cards
+                                  .filter(
+                                    (card) =>
+                                      card.type ===
+                                      (activeButton2 === "Add Link" ? "link" : "shop")
+                                  )
+                                  .map((card, index) => (
+                                    <a
+                                      key={index}
+                                      href={card.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className={style.miniCard}
+                                      style={{ backgroundColor: bgColor3, color: fontColor }} // ✅ Change MiniCard background dynamically
+                                    >
+                                      <img
+                                        src={getAppIcon(card.selectedApp)}
+                                        alt={card.selectedApp}
+                                      />
+                                      <span style={{ fontFamily: fontFamily }}>
+                                        {card.title || "No Title"}
+                                      </span>
+                                    </a>
+                                  ))}
+                              </div>1 */}
+                              <div className={`${style.miniCardContainer} ${style[layout]}`}>
+                                {cards
+                                  .filter(
+                                    (card) =>
+                                      card.type ===
+                                      (activeButton2 === "Add Link" ? "link" : "shop")
+                                  )
+                                  .map((card, index) => (
+                                    <a
+                                      key={index}
+                                      href={card.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className={`${style.miniCard} ${selectedButtonStyle}`} // Apply selected button style
+                                      style={{
+                                        backgroundColor: buttonColor, // Apply selected button color
+                                        color: buttonFontColor, // Apply selected font color
+                                      }}
+                                    >
+                                      <img
+                                        src={getAppIcon(card.selectedApp)}
+                                        alt={card.selectedApp}
+                                      />
+                                      <span style={{ fontFamily: fontFamily }}>
+                                        {card.title || "No Title"}
+                                      </span>
+                                    </a>
+                                  ))}
+                              </div>
+              
+                              {/* ✅ Scrollable Mini Cards (X-axis) */}
+              
+                              <button className={style.button}>Get Connected</button>
+                            </div>
 
               <div className={style.forMob}>
                 <div className={style.wrapper}>
