@@ -7,6 +7,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: process.env.PORT || 5173,
-    host: "0.0.0.0"
+    host: "0.0.0.0",
+    allowedHosts: ["linkspark.onrender.com"], // Allow your Render domain
+  },
+  preview: {
+    port: process.env.PORT || 4173,
+    host: "0.0.0.0",
   },
 });
