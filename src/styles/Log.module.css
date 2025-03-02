@@ -1,0 +1,443 @@
+  .container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+  }
+  
+  .leftside {
+    flex: 1; /* Form side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 200px;
+    position: relative;
+  }
+  
+  .logo {
+    width: 120px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .formContainer {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .registerForm {
+    width: 100%;
+  }
+  
+  .registerForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px -5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 10px;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #22c55e;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .loginButton:hover {
+    background-color: #1ba44a;
+  }
+  
+  .forgotPassword {
+    color: #22c55e;
+    font-size: 12px;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .signupText {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+  
+  .signupLink {
+    color: #22c55e;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /* Image side */
+  .rightside {
+    flex: 1.5; /* Make image side larger */
+    display: flex;
+    justify-content: flex-end; /* Push image to the right */
+    align-items: center;
+  }
+  
+  .image {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  .acc_top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .registerForm label {
+    display: block; /* Ensures labels take full width */
+    text-align: left; /* Aligns text to the left */
+    font-size: 12px;
+  }
+
+
+  
+ 
+
+
+
+.category-selector {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.category-selector h3,
+.category-selector h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Container for the pills */
+.categoryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers the pills */
+  gap: 10px; /* gap between buttons */
+}
+
+/* Reset default button styles if needed */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Style for each category button */
+.categoryPill {
+  display: inline-flex;
+  align-items: center;
+  padding:5px 15px;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+
+
+/* Increase gap between icon and text */
+.pillIcon {
+  margin-right: 0.8rem;
+  font-size: 1rem; /* adjust size as needed */
+}
+
+/* Style for selected category button */
+.selected {
+  border-color: #00ff55;    /* Green border */
+  background-color: #6ee578; /* Slight green tint background */
+  color: #fff;              /* White text for contrast */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General container */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Left Side: Form */
+.leftside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  position: relative;
+}
+
+
+
+/* Form Container */
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-left: 100px;
+}
+
+
+.registerForm {
+  width: 450px;
+}
+
+.registerForm input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Adjust button sizes */
+.loginButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #22c55e;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.loginButton:hover {
+  background-color: #1ba44a;
+}
+
+/* Forgot Password & Signup */
+.forgotPassword {
+  color: #22c55e;
+  font-size: 12px;
+  margin-top: 10px;
+  display: block;
+}
+
+.signupText {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.signupLink {
+  color: #22c55e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Right Side: Image */
+.rightside {
+  flex: 1.5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.image {
+  width: auto;
+  height: 100vh;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .rightside {
+    display: none; /* Hide the image on small screens */
+  }
+}
+
+/* Account Section */
+.acc_top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.registerForm label {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+}
+
+/* ✅ Category Selector Responsiveness */
+.category-selector {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Make category pills flexible */
+.categoryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: justify;
+  gap: 10px;
+}
+
+.categoryPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  font-size: 14px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.pillIcon {
+  margin-right: 0.5rem;
+  font-size: 14px;
+}
+
+.selected {
+  border-color: #00ff55;
+  background-color: #6ee578;
+  color: #fff;
+}
+
+
+/* Align logo and heading to the left */
+.leftside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns content to the left */
+  padding: 100px;
+  position: relative;
+  width: 100%;
+}
+
+.logo {
+  width: 120px;
+  position: relative; /* Remove absolute positioning */
+  margin-bottom: 10px; /* Space between logo and heading */
+}
+
+.heading {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left; /* Ensure text is aligned left */
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 8px;
+  float: left;
+
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements */
+    height: auto;
+  }
+
+  .leftside {
+    flex: none;
+    width: 100%;
+    padding: 40px;
+  }
+
+  .logo {
+    width: 100px;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .categoryContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .categoryPill {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leftside {
+    width: 60%;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .registerForm{
+    width: 100%;
+  }
+  .formContainer {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-left: 25px;
+  }
+}

@@ -1,0 +1,1556 @@
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .logo{
+    justify-self: center;
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  nav ul li {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Ensures text and image are justified */
+    width: 100%;
+    }
+
+    nav ul li a {
+      text-decoration: none;  /* Removes underline */
+      color: inherit;  /* Uses the default text color */
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Adds spacing between icon and text */
+    }
+    
+    nav ul li a:hover {
+      color: #ff9900; /* Change color on hover (optional) */
+    }
+    
+  
+  /* Active state */
+  .sideactive {
+    font-weight: bold;
+    color: green;
+    background-color: #f4f4f4;
+    width: 100%;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+  }
+  
+  /* Make active image green */
+  .sideactive img {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(97%) saturate(352%) hue-rotate(75deg) brightness(95%) contrast(89%);
+  }
+  
+  /* Make other images grey */
+  nav ul li img {
+    filter: grayscale(100%);
+    height: 20px;
+    width: 20px;
+  }
+  
+
+  .main {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  .profile {
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  .profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+    text-align: center; /* Centers text content */
+    border-radius: 0px 0px 25px 25px; /* Smooth rounded edges */
+    transition: background-color 0.3s ease-in-out;
+    padding-top: 20px; /* Add some padding */
+}
+
+
+
+  .hiddenInput {
+    display: none;
+  }
+  
+  .customButton {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+  }
+ 
+  .upload button{
+    border: 1px solid;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
+
+
+
+  
+  .pro {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .image {
+    width: 100px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .small{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .i{
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    object-fit: cover;
+  }
+  
+  .placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .uploadSection {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .uploadButton {
+    background: #22c55e;
+    color: white;
+    width: 250px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .hiddenInput {
+    display: none;
+  }
+  
+  .removeButton {
+    background: #e5e7eb;
+    color: black;
+    width: 300px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+  }
+  
+  .removeButton:hover {
+    background: #d1d5db;
+  }
+  
+  .disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+  .info {
+    margin-top: 16px;
+  }
+  
+  .field {
+    background: #f3f4f6;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .label {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: black;
+    outline: none;
+    padding: 4px;
+  }
+  
+
+
+
+  .wrapper {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align .con to the right */
+    padding-right: 20px;
+    position: relative; /* Allow absolute positioning */
+  }
+  
+  /* Align the "Profile" title to the left */
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px; /* Adds spacing between title and .con */
+    text-align: left;
+    align-self: flex-start; /* Push the title to the left */
+    margin-left: 0; /* Ensures it's on the left side */
+  }
+  
+  .con {
+    width: 450px;
+    min-height: auto;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: auto; /* Keeps it aligned to the right */
+    margin-right: 20px; /* Adds spacing from the right */
+    margin-bottom: 25px;
+  } 
+  
+  .two button {
+    background-color: gray; /* Default color */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .two button.active {
+    background-color: green; /* Active button color */
+  }
+
+  .plus{
+    margin-top: 10px;
+  }
+
+  .plus button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #219653; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width */
+  }
+  
+  .plus button:hover {
+    background-color: #1e8449; /* Darker green on hover */
+  }
+  
+  .plus button::before {
+    content: "+"; /* Add the plus icon */
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .bg_choice{
+    width: auto;
+    height: 250px;
+    background-color: aqua;
+    border-radius: 15px;
+    }
+
+    .bg_pro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 100%; /* Ensure full width */
+        height: 100%; /* Ensure full height */
+    }
+
+
+    .bg_choice {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+    }
+    
+    .bg_pro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .image {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: white;
+        padding: 5px;
+    }
+    
+
+    
+    /* Color Selection Buttons */
+    .colorOptions {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .colorBtn {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: none;
+        transition: transform 0.2s;
+    }
+    
+    .colorBtn:hover {
+        transform: scale(1.1);
+    }
+
+    .colorInput{
+        margin-top: 15px;
+        border-radius: 10px;
+        border: 1px solid;
+    }
+    
+    .save {
+      background: #22c55e;
+      color: white;
+      width: 120px;
+      padding: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      float: right;
+      margin-bottom: 20px;
+    }
+
+    .share{
+      background-color: #ffffff;
+      color: black;
+      padding: 10px 15px;
+      border-radius: 16px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      float: right;
+      margin-bottom: 20px;
+    }
+    
+
+    .mobilePreview {
+      display: flex;
+      align-items: flex-start; /* Ensures top alignment */
+      justify-content: space-around;
+      height: 100%; /* Ensures it does not expand */
+      position: relative;
+  }
+  
+
+  
+  .bg_choice {
+    position: relative; /* Ensure proper stacking */
+    z-index: 1; /* Lower than the modal */
+  }
+  
+  .modal {
+    position: fixed; /* Ensures it stays above content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Make sure this is high */
+    width: 50%; /* Adjust based on your layout */
+    max-width: 600px;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dim background */
+    z-index: 999; /* Slightly lower than modal */
+  }
+  
+  .cardContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .card {
+    background: #d2d1d1a1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 430px;
+    word-wrap: break-word; /* Wraps long words */
+    overflow: hidden; /* Prevents overflow */
+    margin-top:15px;
+  }
+  
+  .card p {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    max-width: 100%; /* Restricts width */
+    display: block;
+    color: #0000008d;
+  }
+  
+  
+
+  .button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto; /* Pushes the button to the bottom */
+    width: 80%; /* Optional: Adjust width */
+    align-self: center; /* Centers horizontally */
+}
+.phoneFrame {
+  width: 300px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 12px solid black;
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Push content to top and bottom */
+  padding-bottom: 20px; /* Prevent button from touching the bottom */
+}
+
+
+
+.profileSection h3,
+.profileSection p {
+    white-space: normal; /* Allows text to wrap */
+    overflow-wrap: break-word; /* Breaks long words */
+    word-break: break-word;
+    max-width: 100%; /* Ensures text does not overflow */
+    padding: 0 5px; /* Adds some padding */
+}
+.profileSection {
+  border-radius: 0px 0px 25px 25px;
+  transition: background-color 0.3s ease-in-out;
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Allows absolute positioning inside */
+}
+
+.profileSection button {
+  position: absolute;
+  top: 10px; /* Adjust the top spacing */
+  left: 10px; /* Move button to the left */
+  background-color: #f4f4f4;
+  border: none;
+  padding: 10px 13px;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+.miniCardContainer {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: center;
+  overflow-x: scroll;
+  padding: -150px 10px ;
+}
+
+.miniCard {
+  display: flex;
+  width: auto;
+  align-items: center;
+  background: #C9C9C9;
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.miniCard:hover {
+  transform: scale(1.05);
+}
+
+.miniCard img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+
+
+
+/* appearance from header */
+
+.layout{
+  display: flex;
+  justify-content: center;
+  gap:25px;
+  padding: 25px;
+}
+.layout button {
+  border: 1px solid transparent; /* Default: No border */
+  padding: 8px;
+  border-radius: 5px;
+  transition: border 0.3s ease-in-out;
+}
+
+.layout button:hover {
+  border: 1px solid gray;
+}
+
+
+.layout button.active {
+  border: 1px solid black; /* Add a solid border when active */
+  background-color: rgba(0, 0, 0, 0.05); /* Optional: Light background */
+}
+
+.layout p{
+  font-size: x-small;
+  padding-top: 5px;
+  text-align: center;
+}
+
+/* Default Mini Card Container */
+.miniCardContainer {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+/* Stack Layout */
+.stack {
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  padding: 10px;
+}
+
+.stack .miniCard {
+  width: 100%;
+  height: 25px;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Ensures exactly 2 items per row */
+  gap: 8px;
+  justify-content: center;
+}
+
+.grid .miniCard {
+  width: auto;
+  padding: 15px;
+  margin: 0px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* .carousel {
+  display: flex;
+  overflow-x: auto;  
+  max-width: auto;
+  height: 200px;
+  gap: 10px;  
+  padding: 10px;  
+  scroll-snap-type: x mandatory;
+  border-radius: 10px;
+  background: white;
+} */
+
+.carousel .miniCard {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  min-width: 100px;
+  height: 200px;
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.carousel {
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
+
+
+.but{
+  height: auto;
+}
+
+.inline {
+  display: flex;
+  justify-content: center; /* ✅ Centers buttons horizontally */
+  align-items: center; /* ✅ Centers buttons vertically */
+  gap: 10px; /* ✅ Adds space between buttons */
+  flex-wrap: wrap;
+}
+
+.inline button {
+  border: 1px solid;
+  display: flex;
+  justify-content: center; /* ✅ Centers text inside the button */
+  align-items: center; /* ✅ Centers content inside the button */
+  padding: 15px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.fill1{
+  background-color: #000;
+  border-radius: 0px;
+}
+
+.fill2{
+  background-color: #000;
+  border-radius: 6px;
+}
+
+.fill3 {
+  background-color: #000;
+  border-radius: 50px; /* Makes the button rounded */
+}
+
+
+.outline1{
+  background-color: #ffffff;
+  border: 1px solid;
+}
+
+.outline2{
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 6px;
+}
+
+.outline3{
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+.hs1 {
+
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 5px 5px 0px black;
+  border-radius: 0px;
+}
+
+.hs2 {
+
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px black;
+}
+
+.hs3 {
+
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px black;
+}
+
+.ss1 {
+
+  border: none;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ss2 {
+
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ss3 {
+
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.spl1 {
+
+  background: black;
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  text-transform: uppercase;
+  clip-path: polygon(
+      0% 5%, 10% 0%, 20% 5%, 30% 0%, 40% 5%, 50% 0%, 
+      60% 5%, 70% 0%, 80% 5%, 90% 0%, 100% 5%, 
+      100% 95%, 90% 100%, 80% 95%, 70% 100%, 60% 95%, 
+      50% 100%, 40% 95%, 30% 100%, 20% 95%, 10% 100%, 0% 95%
+  );
+}
+
+.spl2 {
+  background: black;
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  text-transform: uppercase;
+  clip-path: polygon(
+      0% 10%, 5% 0%, 10% 10%, 15% 0%, 20% 10%, 25% 0%, 
+      30% 10%, 35% 0%, 40% 10%, 45% 0%, 50% 10%, 55% 0%, 
+      60% 10%, 65% 0%, 70% 10%, 75% 0%, 80% 10%, 85% 0%, 
+      90% 10%, 95% 0%, 100% 10%, 
+      100% 90%, 95% 100%, 90% 90%, 85% 100%, 80% 90%, 
+      75% 100%, 70% 90%, 65% 100%, 60% 90%, 55% 100%, 
+      50% 90%, 45% 100%, 40% 90%, 35% 100%, 30% 90%, 
+      25% 100%, 20% 90%, 15% 100%, 10% 90%, 5% 100%, 0% 90%
+  );}
+
+  .spl3 {
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+    width: 100px;
+    gap:10px
+}
+
+.spl3::before {
+    content: "";
+    position: absolute;
+    width: 265px;  /* Narrower */
+    height: 42px;  /* Taller */
+    border: 2px solid black;
+    top: -4.5px;  /* Adjust positioning */
+    left: 5px;  /* Shift it slightly */
+}
+
+
+
+
+.spl4 {
+
+  background-color: black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.spl5 {
+  border: 2px solid black;
+  height: auto;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.spl5 p{
+  font-size: 2px;
+}
+
+/* Top-left and bottom-right small squares */
+.spl5::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border: 2px solid black;
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  padding: 1px;
+  background-color: white;
+}
+
+
+
+/* Top-right and bottom-left small squares */
+.spl5::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border: 2px solid black;
+  position: absolute;
+  top: -7px;
+  right: -6px;
+  padding: 1px;
+  background-color: white;
+}
+
+
+
+
+
+.spl6 {
+  width: 120px;
+  height: 40px;
+  background-color: black;
+  border: none;
+  color: white;
+  border-radius: 20px 0 0 20px;
+}
+
+.layout_Cols{
+  display: flex;
+  flex-direction: column  ;
+}
+
+
+
+
+.Theme{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Theme button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ Centers text inside the button */
+  align-items: center; /* ✅ Centers content inside the button */
+  padding: 10px 15px;
+  border-radius: 8px; /* ✅ Slightly rounded corners */
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.Theme p{
+  font-size: 11px;
+}
+
+.Theme img{
+  height: auto;
+  width: 80px;
+  border-radius: 10px;
+}
+
+
+
+.fontSelect {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #fff;
+  outline: none;
+  margin-bottom: 25px;
+}
+
+.fontSelect:focus {
+  border-color: #007bff;
+}
+
+.colorInput {
+  width: 140px;
+  height: 50px; /* ✅ Match color picker height */
+  border: 1px solid;
+  padding: 0 10px; /* ✅ Adds some space inside */
+  text-transform: uppercase; /* ✅ Ensures #FFFFFF looks uniform */
+}
+
+.colIp{
+  width: 50px;
+  height: 50px;
+}
+
+.col_check {
+  display: flex;
+  align-items: center; /* ✅ Ensures vertical alignment */
+  gap: 10px; /* ✅ Adds spacing between inputs */
+}
+
+
+.colorInput::-webkit-color-swatch {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.colorInput::-moz-color-swatch {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+
+.phoneFrame {
+  font-family: var(--selected-font, Arial) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.phone{
+  height: 100vh;
+  width: 100%;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensures it spans full width */
+}
+
+
+
+@media (max-width: 768px) {
+
+  .profileSection {
+    padding:  50px;
+  }
+
+  .i {
+    width: 100px; /* Adjust profile image size */
+    height: 100px;
+  }
+
+  .two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    margin-top: 10px;
+  }
+
+  .miniCard {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .phone{
+    position: relative;
+  }
+
+  .phone > *:last-child{
+
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+  }
+}
+
+
+.toggleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  float: right;
+
+}
+
+.toggleSwitch {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggleSwitch.on {
+  background-color: #006E18;
+}
+
+.toggleCircle {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: left 0.3s ease-in-out;
+}
+
+.toggleSwitch.on .toggleCircle {
+  left: 27px;
+}
+
+.popup{
+  position: relative;
+  bottom: -120px;
+  left: 10px;
+  border-radius: 15px;
+  background-color: #F3F3F1;
+  width: 100px;
+  padding: 5px 10px;
+
+}
+
+
+.set {
+  width: 90%; /* Reduce width to half */
+  min-height: auto;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 50px auto; /* Centers the form */
+}
+
+.set label {
+  font-size: 14px;
+}
+
+.set input {
+  width: 50%; /* Ensures inputs take the full container width */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #3E3E3E;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.setChange{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+.setSaveContainer {
+  display: flex;
+  justify-content: flex-end; /* Pushes button to the right */
+  margin-bottom: 100px;
+}
+
+.setSave {
+  background: #29A263;
+  color: white;
+  width: 120px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+
+
+.threeBox{
+  display: flex;
+  justify-content: space-around;
+}
+
+.threeBox div{
+  width: 280px;
+  padding: 25px 20px;
+  border-radius: 12px;
+}
+
+.threeBox p{
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.linksC{
+  background-color: #22D679;
+}
+
+.ShopsC{
+  background-color: #DCFFEB;
+}
+
+.CTA{
+  background-color: #DCFFEB;
+}
+
+.graph{
+  width: auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  margin-top: 50px;
+}
+
+.DS{
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.device{
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 25em;
+  width: 37em;
+}
+
+.sites{
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 25em;
+  width: 37em;
+}
+
+.linksGraph{
+  padding: 10px 25px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 35px;
+  height: 25em;
+  width: 45em;
+}
+
+.Preview{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mobDown{
+  display: none;
+}
+.mobUp{
+  display: none;
+}
+
+
+
+@media (max-width: 768px) {
+  .phoneFrame {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mobDown {
+    display: block;
+    position: fixed;  /* Fixed at the bottom */
+    bottom: 0;        /* Stick to the bottom */
+    left: 0;
+    width: 100%;      /* Full width */
+    background: white; /* Background for visibility */
+    padding: 10px 0;  /* Add some padding */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    z-index:900;
+  }
+
+  .Preview {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    position: fixed;           /* Fixed at the bottom */
+    bottom: 150px;             /* Position from bottom */
+    left: 50%;                 /* Move to center */
+    transform: translateX(-50%); /* Adjust for true centering */
+    background: white;         /* Background for visibility */
+    padding: 8px 22px;        /* Padding for button space */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 901;              /* Keep it above other elements */
+    border-radius: 8px;        /* Optional: rounded corners */
+}
+
+  .Preview button {
+    display: flex;
+    align-items: center;  /* Aligns icon and text */
+    gap: 6px;             /* Space between icon and text */
+    font-size: 16px;      /* Adjust font size */
+    padding: 8px 12px;    /* Proper padding */
+}
+
+
+  .mobDown ul {
+    display: flex;
+    justify-content: space-around; /* Spread items evenly */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .mobDown ul li {
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .mobDown ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .mobDown ul li img {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+  }
+
+  .sideactive {
+    font-weight: bold;
+    color: green;
+    background-color: #f4f4f4;
+      border-radius: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobUp {
+    display: flex; /* Makes logo & profile sit in a row */
+    justify-content: space-between; /* Pushes items to edges */
+    align-items: center; /* Vertically centers them */
+    padding: 10px 15px; /* Adds spacing */
+    background: white; /* Optional: background for visibility */
+    position: fixed; /* Keeps it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it's above other elements */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+
+  .mobUp .logo img {
+    height: 35px; /* Adjust size as needed */
+  }
+
+  .mobUp .profile {
+    cursor: pointer; /* Makes it clickable */
+    display: flex;
+    align-items: center;
+  }
+
+  .mobUp .profile img {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    border-radius: 50%; /* Makes profile picture round */
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  header{
+    margin-top: 5rem;
+    padding-right: 120px;
+    }
+  header P{
+    font-size: 12px;
+  }
+
+  .wrapper{
+    width: 22em;
+    padding-right: 0px;
+    float: left;
+  }
+  .con{
+    width: 80%;
+    min-height: auto;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 0px; /* Keeps it aligned to the right */
+    margin-right: 20px; /* Adds spacing from the right */
+    margin-bottom: 25px;
+  }
+
+  .uploadButton {
+    background: #22c55e;
+    color: white;
+    width: auto;
+    padding: 6px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .removeButton {
+    background: #e5e7eb;
+    color: black;
+    width: auto;
+    padding: 6px 45px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+  }
+  .uploadSection {
+    margin-top: 12px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .cardContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .card {
+    background: #d2d1d1a1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    word-wrap: break-word; /* Wraps long words */
+    overflow: hidden; /* Prevents overflow */
+    margin-top:15px;
+  }
+  
+  .card p {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    max-width:80%; /* Restricts width */
+    display: block;
+    color: #0000008d;
+  }
+
+  .forMob{
+    margin-bottom: 100px;
+  }
+
+  .Theme{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .Theme button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ✅ Centers text inside the button */
+    align-items: center; /* ✅ Centers content inside the button */
+    padding: 10px 15px;
+    border-radius: 8px; /* ✅ Slightly rounded corners */
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .Theme p{
+    font-size: 8px;
+  }
+  
+  .Theme img{
+    height: auto;
+    width: 60px;
+    border-radius: 10px;
+  }
+  
+  .set input {
+    width: 90%; /* Ensures inputs take the full container width */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3E3E3E;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .main{
+    background-color: #ffffff;
+  }
+  .threeBox {
+    flex-direction: column;
+    align-items: center; /* Center them horizontally */
+    gap:25px;
+    width: 21em;
+  }
+
+  .threeBox div {
+    width: 90%; /* Make divs take full width */
+  }
+
+  .graph{
+    margin-top: 70px;
+    width: 19.5em;
+    height: auto;
+    padding-right: 0px;
+  }
+
+  .DS{
+    display: flex;
+    flex-wrap: wrap;
+    width: 21em;
+    gap:25px;
+  }
+
+  .linksGraph{
+    width: 18em;
+    padding-bottom: 80px;
+  }
+
+  
+
+
+}
