@@ -24,6 +24,7 @@ import X from "../assets/twitter.png";
 import logout from "../assets/logout.png";
 import { LuEye } from "react-icons/lu";
 import { GoShareAndroid } from "react-icons/go";
+import bar from '../assets/bar.png';
 
 
 
@@ -51,8 +52,10 @@ function Dashboard() {
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const [selectedButtonStyle, setSelectedButtonStyle] = useState(""); // Store the selected style
   const [buttonColor, setButtonColor] = useState("#ffffff");
-  const [buttonFontColor, setButtonFontColor] = useState("#888888");
-  
+  const [buttonFontColor, setButtonFontColor] = useState("#888888");  
+  const [urlCount, setUrlCount] = useState(null); // ✅ State for URL count
+
+    
 
   const handleEditClick = (card) => {
     setSelectedCard(card);
@@ -120,6 +123,8 @@ function Dashboard() {
         // Fetch image & saved data
         fetchUserImage(data.email);
         fetchSavedData(data.email);
+        fetchAnalytics(data.email); // ✅ Fetch analytics after getting user email
+
       } catch (error) {
         console.error("Error fetching user details:", error);
         navigate("/login");
@@ -128,6 +133,29 @@ function Dashboard() {
 
     fetchUserDetails();
   }, [navigate]);
+
+  const fetchAnalytics = async (email) => {
+    try {
+      const response = await fetch(
+        `https://spark-back.onrender.com/api/analytics/${email}`
+      );
+  
+      if (!response.ok) {
+        console.error("No analytics found for this email");
+        return;
+      }
+  
+      const data = await response.json();
+      
+      // ✅ Store only urlCount in state
+      setUrlCount(data.urlCount || {}); 
+  
+      console.log("Fetched URL Count:", data.urlCount);
+    } catch (error) {
+      console.error("Error fetching analytics:", error);
+    }
+  };
+
 
   const fetchSavedData = async (email) => {
     try {
@@ -772,7 +800,7 @@ function Dashboard() {
                           <button onClick={handleAddClick}>Add</button>
                         </div>
 
-                        <div className={style.cardContainer}>
+                        {/* <div className={style.cardContainer}>
                           {cards
                             .filter(
                               (card) =>
@@ -810,7 +838,39 @@ function Dashboard() {
                                 <p style={{ display: "none" }}>{card.title}</p>
                               </div>
                             ))}
-                        </div>
+                        </div> */}
+                        <div className={style.cardContainer}>
+  {cards
+    .filter(
+      (card) => card.type === (activeButton === "Add Link" ? "link" : "shop")
+    )
+    .map((card) => (
+      <div key={card._id} className={style.card}>
+        <p>
+          <button onClick={() => handleEditClick(card)}>
+            {card.selectedApp || "None"}&nbsp;
+            <SlPencil />
+          </button>
+        </p>
+        <div className={style.toggleContainer}>
+          <div className={`${style.toggleSwitch} ${style.on ? style.on : ""}`}>
+            <div className={style.toggleCircle}></div>
+          </div>
+          <button onClick={() => handleDeleteCard(card._id)}>
+            <RiDeleteBin6Line />
+          </button>
+        </div>
+        <p>
+          <button>
+            {card.link}&nbsp;
+            <SlPencil />
+          </button>
+        </p>
+        <p style={{fontSize:"12px"}}><img src={bar} height={"14px"}/>&nbsp;{card.title}&nbsp;{urlCount?.[card.title] || 0}</p>
+      </div>
+    ))}
+</div>
+
                       </div>
                     </div>
 
