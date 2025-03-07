@@ -45,7 +45,7 @@ A **full-stack web application** that allows users to create **custom link-shari
 - **Customization**: Select themes, modify button styles, and choose layout options.  
 - **Analytics Tracking**:  
   - Clicks per link.  
-  - Device type (Mobile/Desktop/Tablet).  
+  - Device type (Mobile/Desktop/Tablet).  (The mobile view which is in window won't work to perform analytics to perform in windows click on the share button of mobile view or the share button to get actual share link there if you click on any link if will perform or count in the analytics )
   - Referring sources (Social media, Direct, etc.).  
 - **Forgot Password & Account Management**: Reset password via email.  
 - **Secure Logout & Responsive UI**: Optimized for **all devices**.  
